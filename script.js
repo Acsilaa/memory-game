@@ -54,6 +54,11 @@ async function Clicked(element){
     element.classList.add("active");
     clicks.push(element);
 
+    if(moves == 0){
+        startTimeStamp = new Date().getTime();
+        DisplayTime();
+    }
+
     if(clicks.length != 2) return;
     moves++;
     $("#moves").text(moves);
@@ -88,4 +93,6 @@ async function DisplayTime(){
     if(guessedCount == pairs.length) return;
     DisplayTime();
 }
-DisplayTime();
+function NewGame(){
+    window.location.href = "";
+}
